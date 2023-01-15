@@ -1,10 +1,12 @@
 
 import React from "react";
-import { StyleSheet, View, Text, Dimensions, Image } from "react-native";
+import { StyleSheet, View, Text, Dimensions, Image, Touchable, TouchableOpacity } from "react-native";
 
 const screenWidth = Dimensions.get('screen').width;
 function random() {
-    console.log('random');
+    let moves = ['hajra', 'waraka', 'mkss'];
+    let Robot = Math.floor(Math.random() * 3);
+    console.log('Robot choose :' + moves[Robot] + '  ' + Robot);
 }
 
 function Robot() {
@@ -34,22 +36,30 @@ function Robot() {
                 <Text style={styles.TextStyle}>
                     player
                 </Text>
-                <Image
-                    source={require('../assets/hajra.png')}
-                    style={{ felx: 1, width: '40%', height: '20%', resizeMode: 'center', padding: 30, marginTop: 2 }}
-                    onPress={random}
-                />
+                <TouchableOpacity onPress={random} style={{width:'45%', height:'25%',marginTop:0.5, justifyContent:"center", alignItems:"center"}}>
+                    <Image
+                        source={require('../assets/hajra.png')}
+                        style={{ felx: 1, width: '100%', height: '100%', resizeMode: 'center', padding: 30, marginTop: 2, marginBottom:20 }}
+                    />
+                </TouchableOpacity>
                 <View style={{ width: screenWidth, flexDirection: 'row' }}>
-                    <Image
-                        source={require('../assets/mks.png')}
-                        style={styles.img}
-                    />
-                    <Image
-                        source={require('../assets/paper.png')}
-                        style={styles.img}
-                    />
+                    <TouchableOpacity onPress={random} style={{width:'50%', height:'40%',marginTop:15, justifyContent:"center", alignItems:"center"}} >
+                        <Image
+                            source={require('../assets/mks.png')}
+                            style={{ felx: 1, width: '100%', height: '100%', resizeMode: 'center', padding: 50, marginTop: 10 }}
+                        />
+                    </TouchableOpacity>
+                    <TouchableOpacity onPress={random} style={{width:'50%', height:'40%',marginTop:15, justifyContent:"center", alignItems:"center"}}>
+                        <Image
+                            source={require('../assets/paper.png')}
+                            style={{ felx: 1, width: '100%', height: '100%', resizeMode: 'center', padding: 50, marginTop: 10 }}
+                        />
+                    </TouchableOpacity>
                 </View>
             </View>
+            <Text style={styles.TextStyle2}>
+                choose youre move
+            </Text>
         </View>
     );
 }
@@ -60,13 +70,13 @@ const styles = StyleSheet.create({
         width: screenWidth,
         justifyContent: 'center',
         alignItems: 'center',
-        height:'50%',
+        height: '50%',
     },
     player: {
         flex: 1,
         backgroundColor: '#663600',
         width: screenWidth,
-        height:'50%',
+        height: '50%',
         justifyContent: 'center',
         alignItems: 'center',
     },
@@ -75,17 +85,24 @@ const styles = StyleSheet.create({
         fontSize: 50,
         fontWeight: 'bold',
         textAlign: 'center',
-        marginBottom: 100,
+        marginBottom: '10%',
     },
     img: {
         flex: 1,
-        width: '200%',
+        width: '100%',
         height: '100%',
         padding: 35,
         resizeMode: 'center',
-        marginBottom: 2,
-        // margin: 5,
-    }
+        marginBottom: 5,
+        margin: 5,
+    },
+    TextStyle2: {
+        color: '#fff',
+        fontSize: 50,
+        fontWeight: 'bold',
+        textAlign: 'center',
+        marginBottom: '1%',
+    },
 })
 
 export default Robot;
