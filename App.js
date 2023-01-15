@@ -1,11 +1,13 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 import Welcome from './screens/welcome';
+import Robot from './screens/robot';
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Welcome />
+      {/* <Welcome /> */}
+      <Robot />
     </View>
   );
 }
