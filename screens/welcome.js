@@ -14,23 +14,23 @@ const styles = StyleSheet.create({
     },
     TextStyle: {
         color: '#663600',
-        fontSize: 30,
+        fontSize: 28,
         fontWeight: 'bold',
         shadowColor: '#000',
+        textAlign:'center', 
+        padding:'1'
     },
 });
-function nav() {
-    navigator.navigate('Robot');
-}
-function Welcome() {
+
+function Welcome({navigation}) {
     return (
         <View>
-            <TouchableOpacity style={styles.button1} onPress={() =>nav() }>
+            <TouchableOpacity style={styles.button1} onPress={() =>navigation.navigate("Robot") }>
                 <Text style={styles.TextStyle} >
                     Play with Robot!
                 </Text>
             </TouchableOpacity>
-            <TouchableOpacity style={styles.button1}>
+            <TouchableOpacity style={styles.button1} onPress={() =>nav() }>
                 <Text style={styles.TextStyle}>
                     Play with friends!
                 </Text>

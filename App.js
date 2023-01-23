@@ -9,16 +9,12 @@ const Stack = createStackNavigator();
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Welcome />
-      {/* <Robot /> */}
-      {/* <NavigationContainer>
+      <NavigationContainer>
         <Stack.Navigator initialRouteName='Welcome'>
-          <Stack.Screen name="Welcome" component={Welcome} />
-          <Stack.Screen name="Robot" component={Robot} />
+          <Stack.Screen name="Welcome" component={Welcome} options={{ headerShown: false }} />
+          <Stack.Screen header='false' name="Robot" component={Robot}  options={{ headerShown: false }}/>
         </Stack.Navigator>
-      </NavigationContainer> */}
-    </View>
+      </NavigationContainer>
   );
 }
 
