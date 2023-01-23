@@ -1,5 +1,5 @@
 import React from 'react';
-import {StyleSheet, Button, Text, View, TouchableOpacity } from 'react-native';
+import { StyleSheet, Button, Text, View, TouchableOpacity } from 'react-native';
 
 const styles = StyleSheet.create({
     button1: {
@@ -19,22 +19,24 @@ const styles = StyleSheet.create({
         shadowColor: '#000',
     },
 });
-
+function nav() {
+    navigator.navigate('Robot');
+}
 function Welcome() {
-  return (
-    <View>
-        <TouchableOpacity style={styles.button1}>
-            <Text style={styles.TextStyle}>
-                Play with Robot!
-            </Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.button1}>
-            <Text style={styles.TextStyle}>
-                Play with friends!
-            </Text>
-        </TouchableOpacity>
-    </View>
-  );
+    return (
+        <View>
+            <TouchableOpacity style={styles.button1} onPress={() =>nav() }>
+                <Text style={styles.TextStyle} >
+                    Play with Robot!
+                </Text>
+            </TouchableOpacity>
+            <TouchableOpacity style={styles.button1}>
+                <Text style={styles.TextStyle}>
+                    Play with friends!
+                </Text>
+            </TouchableOpacity>
+        </View>
+    );
 }
 
 
